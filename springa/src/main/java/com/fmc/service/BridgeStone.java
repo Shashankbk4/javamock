@@ -5,9 +5,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class BridgeStone implements Tyre {
 
+	
+	    public String rotate() {
+	       
+	    	return "Vehicle is start moving";
+	    }
 
-	public void rotate() {
-		System.out.println("bridge stone tyres is rotating");
-		
-	}
+	    public String stop() {
+	       
+	    return "Vehicle has stopped";
+	    }
 }

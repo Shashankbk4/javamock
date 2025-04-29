@@ -1,5 +1,5 @@
 package com.fmc.service;
 
 public interface Speakers {
-	void playMusic();
+	  String makeSound(Song song);
 }

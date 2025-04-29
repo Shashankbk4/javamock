@@ -5,9 +5,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class Sony implements Speakers {
 
-	public void playMusic() {
-		System.out.println("sony speakers are used to play music");
-		
-	}
+	  public String makeSound(Song song) {
+	        return "Playing song: " + song.getTitle();
+	    }
 
 }

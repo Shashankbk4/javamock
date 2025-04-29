@@ -1,5 +1,6 @@
 package com.fmc.service;
 
 public interface Tyre {
-  void rotate();
+	 String rotate();
+	 String stop();
 }

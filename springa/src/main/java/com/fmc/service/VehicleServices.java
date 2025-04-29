@@ -1,51 +1,55 @@
 package com.fmc.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class VehicleServices {
 
-    private Speakers speakers;
-	private Tyre tyres;
+	 @Autowired
+	    private Speakers speakers;  
 
-	public VehicleServices(Speakers speakers, Tyre tyres) {
-		super();
-		this.speakers = speakers;
-		this.tyres = tyres;
-	}
+	    @Autowired
+	    private Tyre tyres;        
+
+	    public  String playMusic(boolean vehicleStarted, Song song) {
+	        String music = null;
+	        if (vehicleStarted) {
+	            music = speakers.makeSound(song);
+	        } else {
+	            music = "Vehicle not started to play music";
+	        }
+	        return music;
+	    }
+
+	    public String moveVehicle(boolean vehicleStarted) {
+	       
+	    	String status=null;
+	       
+	    	if (vehicleStarted) {
+	            status = tyres.rotate();
+	            System.out.println(status);
+	            applyBrake(vehicleStarted);
+	         } 
+	    	else {
+	            
+	        	status = "Vehicle not started to move";
+	        }
+	    
+	        return status;
+	    }
+
+	    public String applyBrake(boolean vehicleStarted) {
+	        String status = null;
+	        if (vehicleStarted) {
+	            status = tyres.stop();
+	            System.out.println(status);
+	        } else {
+	            status = "Vehicle not started to apply brake";
+	        }
+	        return status;
+	    }
+		
+		
 	
-	public  void moveVehicle(boolean start) {
-		
-		if(start) {
-			System.out.println("vehicle is moving");
-			tyres.rotate();
-			speakers.playMusic();
-			applyBreake(true);
-			stop(true);
-			
-			
-		}
-		else {
-			System.out.println("start vehicle first");
-		}
-	}
-	
-	public static void stop(boolean start) {
-		if(start) {
-			System.out.println("vehicle stopped");
-		}
-		else {
-			System.out.println("start vehicle first");
-		}
-	}
-	public static void applyBreake(boolean start) {
-		
-		if(start) {
-			System.out.println("apply break");
-		}
-		else {
-			System.out.println("start the vehicle first");
-		}
-		
-	}
 }

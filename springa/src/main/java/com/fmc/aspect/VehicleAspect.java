@@ -15,20 +15,22 @@ public class VehicleAspect {
 
 	private Logger logger=Logger.getLogger(VehicleAspect.class.getName());
 	@Around("execution(* com.fmc.service.VehicleServices.moveVehicle(boolean))")
-	public void calculate(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+	public Object calculate(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
 		
 
 		logger.info("method execution start"+ proceedingJoinPoint.getSignature().getName());
 		
 		Instant start=Instant.now();
 		
-	     proceedingJoinPoint.proceed();
+		 Object result =proceedingJoinPoint.proceed();
 	     
 	     Instant end=Instant.now();
 	     long timeElapsed=Duration.between(start, end).toMillis();
-	     System.out.println("total time taken is -->"+ timeElapsed);
+	  
 		   logger.info("method execution end "+proceedingJoinPoint.getSignature().getName());
-   
+		   System.out.println("total time taken is -->"+ timeElapsed);
+		
+		   return result;
 		}
 	
 }
