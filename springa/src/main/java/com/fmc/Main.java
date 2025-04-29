@@ -9,13 +9,16 @@ import com.fmc.service.VehicleServices;
 
 public class Main {
  
+	 
 	public static void main(String[] args) {
 	
 	 ApplicationContext context=new AnnotationConfigApplicationContext(ProjectConfig.class);
 		
 		VehicleServices vehicleServices=context.getBean(VehicleServices.class);
 		
-		vehicleServices.moveVehicle(true);
+		boolean vehicleStatus=false;
+		
+		vehicleServices.moveVehicle(vehicleStatus);
 		
 
 }

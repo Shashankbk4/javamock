@@ -5,11 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class VehicleServices {
 
-
-
-	private Speakers speakers;
-	
-
+    private Speakers speakers;
 	private Tyre tyres;
 
 	public VehicleServices(Speakers speakers, Tyre tyres) {
