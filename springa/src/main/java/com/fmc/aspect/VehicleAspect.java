@@ -1,4 +1,4 @@
-package com.fmc1.aspect;
+package com.fmc.aspect;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class VehicleAspect {
 
 	private Logger logger=Logger.getLogger(VehicleAspect.class.getName());
-	@Around("execution(* com.fmc1.VehicleServices.moveVehicle(boolean))")
+	@Around("execution(* com.fmc.service.VehicleServices.moveVehicle(boolean))")
 	public void calculate(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
 		
 		logger.info("method execution start"+ proceedingJoinPoint.getSignature().getName());

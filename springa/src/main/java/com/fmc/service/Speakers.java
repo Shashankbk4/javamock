@@ -1,4 +1,4 @@
-package com.fmc1;
+package com.fmc.service;
 
 public interface Speakers {
 	void playMusic();

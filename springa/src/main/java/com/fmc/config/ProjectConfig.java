@@ -1,15 +1,15 @@
-package com.fmc1.config;
+package com.fmc.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 
-import com.fmc1.BridgeStone;
-import com.fmc1.Sony;
+import com.fmc.service.BridgeStone;
+import com.fmc.service.Sony;
 
 @Component
-@ComponentScan("com.fmc1")
+@ComponentScan("com.fmc")
 @EnableAspectJAutoProxy
 public class ProjectConfig {
 

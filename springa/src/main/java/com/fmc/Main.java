@@ -1,13 +1,15 @@
-package com.fmc1.main;
+package com.fmc;
 
 import org.springframework.context.ApplicationContext;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.fmc1.VehicleServices;
-import com.fmc1.config.ProjectConfig;
+import com.fmc.config.ProjectConfig;
+import com.fmc.service.VehicleServices;
 
-public class Test {
- public static void main(String[] args) {
+public class Main {
+ 
+	public static void main(String[] args) {
 	
 	 ApplicationContext context=new AnnotationConfigApplicationContext(ProjectConfig.class);
 		
@@ -15,6 +17,6 @@ public class Test {
 		
 		vehicleServices.moveVehicle(true);
 		
-		vehicleServices.applyBreake(true);
+
 }
 }

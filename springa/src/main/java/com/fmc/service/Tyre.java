@@ -1,4 +1,4 @@
-package com.fmc1;
+package com.fmc.service;
 
 public interface Tyre {
   void rotate();
